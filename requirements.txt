@@ -1,0 +1,8 @@
+ecdsa==0.16
+pycryptodome==3.10.1
+bitcoinlib==0.6.3
+SQLAlchemy==1.4.28
+pyaes==1.6.1
+requests==2.26.0
+scrypt==0.8.19
+numpy
