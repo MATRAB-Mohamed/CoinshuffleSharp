@@ -5,11 +5,12 @@ from transaction_verification_phase import transaction_verification_phase
 from broadcasting_phase import broadcasting_phase
 from blame_phase import blame_phase
 
-NUM_PARTICIPANTS = 3
+NUM_PARTICIPANTS = Participant.get_wallet_count()
+Num_new_participant = int(input('Entrer le nombre des participants : '))
 
 def main():
     # Initialize participants
-    participants = [Participant(str(i)) for i in range(NUM_PARTICIPANTS)]
+    participants = [Participant(str(i)) for i in range(NUM_PARTICIPANTS, Num_new_participant + NUM_PARTICIPANTS)]
 
     # Phase 1: Announcement
     print("Announcement Phase")

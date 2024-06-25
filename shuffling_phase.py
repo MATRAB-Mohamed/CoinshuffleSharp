@@ -4,7 +4,9 @@ import random
 
 def encrypt(data, public_key):
     cipher = AES.new(public_key[:16].encode('utf-8'), AES.MODE_CBC)
-    ct_bytes = cipher.encrypt(pad(data.encode('utf-8'), AES.block_size))
+    if isinstance(data, str):
+        data = data.encode('utf-8')
+    ct_bytes = cipher.encrypt(pad(data, AES.block_size))
     return cipher.iv + ct_bytes
 
 def shuffling_phase(participants):
